@@ -1,7 +1,21 @@
 body {
-    background-color: greenyellow;
+    background-color: azure;
 }
 
 h2 {
-    background-color: violet;
+    text-align: center;
+    text-decoration: wavy;
+    background-color: darkcyan;
+}
+
+li {
+    text-decoration: wavy;
+    text-transform: uppercase;
+    text-decoration-style: dotted;
+    text-shadow: black;
+}
+
+p {
+    transition: ease-in-out;
+    text-align: center;
 }
