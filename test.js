@@ -1,0 +1,1 @@
+alert("Hey , don't exit this site")
