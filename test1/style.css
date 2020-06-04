@@ -66,3 +66,9 @@ section {
     font-size: 130%;
     opacity: 1;
 }
+
+#float1 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
