@@ -67,8 +67,22 @@ section {
     opacity: 1;
 }
 
-#float1 {
+#float {
     width: 50%;
     float: left;
     padding: 10px;
+}
+
+#relative1 {
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 10%;
+}
+
+#relative2 {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    width: 10%;
 }
