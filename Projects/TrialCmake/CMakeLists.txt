@@ -6,8 +6,29 @@ ADD_EXECUTABLE(SimpleApplication Application.cpp)
 
 ADD_SUBDIRECTORY(MathLib)
 
-TARGET_INCLUDE_DIRECTORIES(SimpleApplication PUBLIC MathLib)
+ADD_SUBDIRECTORY(external/glfw)
 
-TARGET_LINK_DIRECTORIES(SimpleApplication PUBLIC MathLib)
+ADD_SUBDIRECTORY(People)
 
-TARGET_LINK_LIBRARIES(SimpleApplication PUBLIC MathLib)
+ADD_SUBDIRECTORY(Shape)
+
+TARGET_INCLUDE_DIRECTORIES(SimpleApplication 
+PUBLIC MathLib
+PUBLIC external/glfw/include
+PUBLIC People
+PUBLIC Shape
+)
+
+TARGET_LINK_DIRECTORIES(SimpleApplication 
+PUBLIC MathLib
+PUBLIC external/glfw/src
+PUBLIC People
+PUBLIC Shape
+)
+
+TARGET_LINK_LIBRARIES(SimpleApplication 
+PUBLIC MathLib
+PUBLIC glfw
+PUBLIC PEOPLE
+PUBLIC SHAPES
+)
