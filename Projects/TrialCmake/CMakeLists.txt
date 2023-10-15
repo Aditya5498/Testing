@@ -1,0 +1,13 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.27.4)
+
+PROJECT(SimpleApplication)
+
+ADD_EXECUTABLE(SimpleApplication Application.cpp)
+
+ADD_SUBDIRECTORY(MathLib)
+
+TARGET_INCLUDE_DIRECTORIES(SimpleApplication PUBLIC MathLib)
+
+TARGET_LINK_DIRECTORIES(SimpleApplication PUBLIC MathLib)
+
+TARGET_LINK_LIBRARIES(SimpleApplication PUBLIC MathLib)
