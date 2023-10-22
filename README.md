@@ -1,8 +1,24 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/Aditya5498/Testing/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# Reference to Cmake
+1. [Simple Cmake structure](https://stackoverflow.com/questions/34438357/cmake-one-build-directory-for-multiple-projects)
+2. [Simple Cmake options](http://csundergrad.science.uoit.ca/courses/cpp-notes/notes/using-cmake.html)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Markdown
 
