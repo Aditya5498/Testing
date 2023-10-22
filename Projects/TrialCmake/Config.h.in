@@ -1,0 +1,4 @@
+#define TrialCmake_VERSION_MAJOR @TrialCmake_VERSION_MAJOR@
+#define TrialCmake_VERSION_MINOR @TrialCmake_VERSION_MINOR@
+
+#cmakedefine USE_MATHLIB
