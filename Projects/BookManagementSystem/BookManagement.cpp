@@ -1,4 +1,4 @@
-#include "Books/books.cpp"
+#include "Admin/Admin.cpp"
 
 #ifndef __IOSTREAM_H
 #include<iostream>
@@ -8,51 +8,52 @@
 #include<string>
 #endif
 
+#ifndef __VECTOR_H
+#include<string>
+#endif
+
 using namespace std;
 
-void displayOptions(){
-    cout<<"Enter\n1\tfor Displaying info of books\n2\tfor adding a new book\n3\tfor taking a book\n4\tto exit\n\t:\t";
+void displayMainOptions(){
+    cout<<"Enter\n1\tfor logging as Admin\nAny other no. to exit\n\t:\t";
+}
+
+bool login(vector<Admin*> &listAdmin,string usr,string pwd,int &usrIdx){
+for(int i=0;i<listAdmin.size();i++){
+    if(listAdmin[i] -> authorize(usr,pwd)) {
+        usrIdx = i;
+        return true;
+    }
+}
+return false;
 }
 
 int main(){
-bool exitFlag = false;
-string Name;
-int caseValue = 0;
-unsigned int numOfBooks = 0, bookNum;
-Books *books = new Books();
-
-while(true){
-displayOptions();
-cin>>caseValue;
-
-switch(caseValue){
-    case 1:
-        books -> displayBooks();
+    vector<Admin*> listAdmin;
+    listAdmin.push_back(new Admin("root","pwd1"));
+    bool exitFlag = false;
+    int caseValue = 0, usrIdx = 0;
+    while(true){
+        string usr,pwd;
+        displayMainOptions();
+        cin>>caseValue;
+        switch(caseValue){
+        case 1:
+                cout<<"\n\tEnter the new username\t:\t";
+                cin>>usr;
+                cout<<"\n\tEnter the password\t:\t";
+                cin>>pwd;
+                if(login(listAdmin, usr, pwd, usrIdx)){
+                    cout<<"\n\tSuccessfully logged in !!!\n";
+                    listAdmin[usrIdx] -> showOptions();
+                }
+                else cout<<"\n\tWrong username or password\n";
         break;
-    case 2:
-        cout<<"\n\tEnter the name of the book\t: ";
-        cin>>Name;
-        cout<<"\n\tEnter the number of books\t: ";
-        cin>>numOfBooks;
-        books -> addBook(Name,numOfBooks);
-        break;
-    case 3:
-         if(books -> getNumBooks() == 0){
-            cout<<"\n\tFirst add a book for subscription purpose\n";
-            break;
-            }
-        cout<<"\n\tEnter the book number\t: ";
-        cin>>bookNum;
-        books -> decreaseBook(bookNum);
-        break;
-    case 4:
-        exitFlag = true;
-        break;
-    default:
-        cout<<"\n\tEnter a correct option\n";
-}
-if(exitFlag) break;
-}
+        default:
+            exitFlag = true;
+        }
+    if(exitFlag) break;
+    }
 
     return 0;
 }

@@ -13,6 +13,7 @@
 using namespace std;
 
 class Books{
+public:
 vector<Book*> listOfBooks;
 
 Book* findBook(unsigned int bookNum){
@@ -22,24 +23,7 @@ Book* findBook(unsigned int bookNum){
     return NULL;
 }
 
-public:
-
 unsigned int getNumBooks(){return listOfBooks.size();}
-
-void addBook(string Name, unsigned int num){
-    listOfBooks.push_back(new Book(Name,num));
-}
-
-
-void decreaseBook(unsigned int bookNum, unsigned int num = 1){
-    Book* book = findBook(bookNum);
-    if(book)
-        book->decreaseQty(num);
-    else
-        cout<<"no book found for book number = "<<bookNum<<endl;
-}
-
-void removeBook(string Name);
 
 void displayBooks(){
     if(listOfBooks.size() == 0) cout<<"\n\tThere are no books in shelf\n";
@@ -53,4 +37,9 @@ void displayBooks(){
     } 
     }
 }
+
+void addBook(string Name, unsigned int num);
+
+void decreaseBook(unsigned int bookNum, unsigned int num = 1);
+
 };
